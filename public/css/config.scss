@@ -1,0 +1,46 @@
+/* media queries scss */
+$mobile-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1229px;
+$desktop-min: 1230px;
+
+:root {
+  /* colors with hex values */
+  --cello: #203061;
+  --white: #fff;
+  --wild-sand: #F5F5F5;
+  --alabaster: #F9F9F9;
+  --bondi-blue: #02b2af;
+  --monza: #d60017;
+
+  /* reassign color vars to semantic color scheme */
+  --text-color: var(--cello);
+  --elements-color: var(--white);
+  --deco-color: var(--bondi-blue);
+
+  /* font */
+  --primary-font: "proxima-nova", sans-serif;
+
+  /* other elelemnts */
+  --primary-transition: .2s linear;
+  --placeholder-color: var(--cello);
+  --border-color: var(--cello);
+  --error-color: var(--monza);
+  --gutter: 15px;
+
+  /* media queries css */
+  --mobile-max: #{$mobile-max};
+  --tablet-min: #{$tablet-min};
+  --tablet-max: #{$tablet-max};
+  --desktop-min: #{$desktop-min};
+}
+
+// loader
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}

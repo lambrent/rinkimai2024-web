@@ -1,0 +1,10 @@
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .body {
+    background: none;
+  }
+  .leaders {
+    &-slider {
+      width: calc(100% + 15px);
+    }
+  }
+}

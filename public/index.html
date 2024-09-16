@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Please update favicon.ico -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#02b2af" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <title>Debatai.lt</title>
+
+    <script>
+      // Please update platform_id
+      var platform_id = 'fd85257f-ae91-42d5-8bbb-70bcd8b47a53';
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper clearfix">
+      <header class="header">
+        <div class="main main--flex">
+          <a href="#" class="site-logo" aria-label="Debatai.lt logo"
+            ><img src="img/logo-v2.svg" alt=""
+          /></a>
+        </div>
+      </header>
+      <main class="body">
+        <div class="main main--flex">
+          <div class="about-text clearfix">
+            <div id="like_button_container"></div>
+            <h2>Apie projektą</h2>
+            <p class="text-justify">
+              2024 m. Seimo rinkimų kandidatų vienmandatėse rinkimų apygardose
+              debatai. Specialiose debatų laidose kandidatai diskutuoja
+              valstybei aktualiausiomis temomis, išsako savo poziciją visuomenei
+              svarbiais klausimais.
+            </p>
+            <p class="text-justify">
+              Specialios laidos rengtos taip, kad nebūtų pažeisti
+              lygiateisiškumo principai. Rinkimų agitacija apmokėta Lietuvos
+              Respublikos Vyriausiosios rinkimų komisijos.
+            </p>
+          </div>
+          <div class="leaders-block clearfix">
+            <h2>Vedėjai</h2>
+            <div class="leaders-slider clearfix">
+              <div class="swiper js-leaders-slider">
+                <div class="swiper-wrapper">
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/edmundas.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Edmundas<br />Jakilaitis</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/egle.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Eglė<br />Matonienė</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/daiva.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Daiva<br />Žeimytė-Bilienė</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/rimvydas.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Rimvydas<br />Paleckis</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/aurimas.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Aurimas<br />Perednis</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/tadas.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Tadas <br />Ignatavičius</h4>
+                  </a>
+                  <a href="#" class="swiper-slide leaders-slider__slide">
+                    <img
+                      src="img/kristina.png"
+                      alt=""
+                      class="leaders-slider__image"
+                    />
+                    <h4 style="color: black;" class="p-b-5">Kristina <br />Pocytė-Medutė</h4>
+                  </a>
+                </div>
+              </div>
+              <div class="leaders-slider__controls">
+                <div class="js-leaders-slider-prev">
+                  <img src="img/icon-arrow-left.svg" alt="" />
+                </div>
+                <div class="js-leaders-slider-next">
+                  <img src="img/icon-arrow-right.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%" id="#debates_list"></div>
+          <!-- <div class="tabs-wrap clearfix">
+          <ul class="tabs-nav">
+            <li class="tabs-nav__items"><a href="#tab-1" class="tabs-nav__links active js-tabs-links">I turas</a></li>
+            <li class="tabs-nav__items"><a href="#tab-2" class="tabs-nav__links js-tabs-links">II turas</a></li>
+          </ul>
+          <div class="tabs-panels open clearfix js-tabs-panels" id="tab-1">
+            <form action="#" class="tabs-search">
+              <label for="tabs-search-55569" class="visually-hidden">Įveskite savivaldybės pavadinimą</label>
+              <input type="text" name="text" placeholder="Įveskite savivaldybės pavadinimą" class="tabs-search__input"
+                id="tabs-search-55569">
+              <button type="submit" class="tabs-search__btn" aria-label="ieškoti"><img src="img/icon-search.svg"
+                  alt=""></button>
+            </form>
+            <h2>Akmenės rajono savivaldybė</h2>
+            <h4 class="text-uppercase">Mero rinkimų debatai</h4>
+            <ul class="debate-list">
+              <li class="debate-list__items">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZJRzdkuV2Fg"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </li>
+              <li class="debate-list__items">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LblpeHQga6s"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+            </ul>
+            <h2>Alytaus miesto savivaldybė</h2>
+            <h4 class="text-uppercase">Mero rinkimų debatai</h4>
+            <ul class="debate-list">
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+            </ul>
+            <h2>Alytaus rajono savivaldybė</h2>
+            <h4 class="text-uppercase">Mero rinkimų debatai</h4>
+            <ul class="debate-list">
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+            </ul>
+            <div class="site-loader"><img src="img/icon-load.svg" alt="" class="site-loader__icon"></div>
+          </div>
+
+          <div class="tabs-panels clearfix js-tabs-panels" id="tab-2">
+            <form action="#" class="tabs-search">
+              <label for="tabs-search-19178" class="visually-hidden">Įveskite savivaldybės pavadinimą</label>
+              <input type="text" name="text" placeholder="Įveskite savivaldybės pavadinimą" class="tabs-search__input"
+                id="tabs-search-19178">
+              <button type="submit" class="tabs-search__btn" aria-label="ieškoti"><img src="img/icon-search.svg"
+                  alt=""></button>
+            </form>
+            <h2>Akmenės rajono savivaldybė</h2>
+            <h4 class="text-uppercase">Mero rinkimų debatai</h4>
+            <ul class="debate-list">
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+              <li class="debate-list__items">
+                <img src="img/video.jpg" alt="" style="width: 100%;">
+              </li>
+            </ul>
+            <div class="site-loader"><img src="img/icon-load.svg" alt="" class="site-loader__icon"></div>
+          </div>
+
+        </div> -->
+        </div>
+      </main>
+    </div>
+
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
