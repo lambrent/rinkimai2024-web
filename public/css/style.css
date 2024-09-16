@@ -1401,7 +1401,6 @@ body {
       background: linear-gradient(to right, #fdbc1f, #ffedc8); }
 
 .tabs-panels {
-  background: var(--elements-color);
   padding: 28px 45px;
   display: none; }
   .tabs-panels.open {
@@ -1431,8 +1430,8 @@ body {
 
 .debate-list {
   margin: 0 0 55px 0;
-  /* grid-template-columns: repeat(2, 1fr); */
-  /* display: grid; */
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
   /* -webkit-column-gap: 38px; */
   /* -moz-column-gap: 38px; */
   /* column-gap: 38px; */
