@@ -55,6 +55,7 @@ function App() {
   };
 
   const searchDebates = (search, x) => {
+    console.log(x);
     return search === ''
       ? x
       : x.filter((debate) => {
@@ -66,11 +67,11 @@ function App() {
   };
 
   const roundOne = useMemo(
-    () => searchDebates(query, debates['1'] && debates['1'].data),
+    () => debates['1'] && searchDebates(query, debates['1'] && debates['1'].data),
     [query, debates]
   );
   const roundTwo = useMemo(
-    () => searchDebates(query, debates['2'] && debates['2'].data),
+    () => debates['2'] && searchDebates(query, debates['2'] && debates['2'].data),
     [query, debates]
   );
 
@@ -149,7 +150,7 @@ function App() {
                                       key={data.id}
                                       className='debate-list__items'
                                     >
-                                      <YoutubeEmbed embedId={data.youtube_id} />
+                                      <YoutubeEmbed embedId={data.youtube_url} />
                                     </li>
                                   );
                                 })}
@@ -204,7 +205,7 @@ function App() {
                                       key={data.id}
                                       className='debate-list__items'
                                     >
-                                      <YoutubeEmbed embedId={data.youtube_id} />
+                                      <YoutubeEmbed embedId={data.youtube_url} />
                                     </li>
                                   );
                                 })}
