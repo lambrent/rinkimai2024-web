@@ -1729,7 +1729,7 @@ body {
   flex: 1 1 0;
 }
 .tabs-nav__links {
-  color: var(--text-color);
+  color: black;
   font: 700 32px/1.2 var(--primary-font);
   text-align: center;
   text-decoration: none;
