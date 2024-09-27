@@ -1,4 +1,4 @@
-import { useEffect, useState, Fragment, useMemo } from 'react';
+import { useEffect, useState, Fragment, useMemo, useRef } from 'react';
 import './debates.css';
 
 const key = platform_id;
@@ -19,6 +19,7 @@ const type = {
 function App() {
   const queryParams = new URLSearchParams(window.location.search);
   const municipalityQuery = queryParams.get('municipality');
+  const myDivRef = useRef(null);
 
   const [debates, setDebates] = useState({});
   const [settings, setSettings] = useState(defaultSettings);
@@ -34,7 +35,10 @@ function App() {
     if (response.settings) setSettings(response.settings);
     if (response.settings?.mainRound) setTab(response.settings.mainRound);
     setDebates(response?.data.reduce((a, v) => ({ ...a, [v.round]: v }), {}));
-    if (municipalityQuery) setQuery(municipalityQuery);
+    if (municipalityQuery) {
+      setQuery(municipalityQuery);
+      myDivRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const YoutubeEmbed = ({ embedId }) => (
@@ -55,7 +59,6 @@ function App() {
   };
 
   const searchDebates = (search, x) => {
-    console.log(x);
     return search === ''
       ? x
       : x.filter((debate) => {
@@ -67,11 +70,13 @@ function App() {
   };
 
   const roundOne = useMemo(
-    () => debates['1'] && searchDebates(query, debates['1'] && debates['1'].data),
+    () =>
+      debates['1'] && searchDebates(query, debates['1'] && debates['1'].data),
     [query, debates]
   );
   const roundTwo = useMemo(
-    () => debates['2'] && searchDebates(query, debates['2'] && debates['2'].data),
+    () =>
+      debates['2'] && searchDebates(query, debates['2'] && debates['2'].data),
     [query, debates]
   );
 
@@ -79,8 +84,12 @@ function App() {
     getDebates();
   }, []);
 
+  useEffect(() => {
+    if (query) myDivRef.current.scrollIntoView({ behavior: 'smooth' });
+  }, [roundOne, roundTwo]);
+
   return (
-    <div className='tabs-wrap clearfix'>
+    <div ref={myDivRef} className='tabs-wrap clearfix'>
       {(!settings.enabled && '') ||
         (debates.length < 1 && (
           <div
@@ -112,7 +121,9 @@ function App() {
             {tab === 1 &&
               debates['1'] &&
               settings.enambledRounds.includes(1) && (
-                <div className='tabs-panels open clearfix js-tabs-panels'>
+                <div
+                  className='tabs-panels open clearfix js-tabs-panels'
+                >
                   <div className='tabs-search'>
                     <label
                       htmlFor='tabs-search-55569'
@@ -150,7 +161,9 @@ function App() {
                                       key={data.id}
                                       className='debate-list__items'
                                     >
-                                      <YoutubeEmbed embedId={data.youtube_url} />
+                                      <YoutubeEmbed
+                                        embedId={data.youtube_url}
+                                      />
                                     </li>
                                   );
                                 })}
@@ -205,7 +218,9 @@ function App() {
                                       key={data.id}
                                       className='debate-list__items'
                                     >
-                                      <YoutubeEmbed embedId={data.youtube_url} />
+                                      <YoutubeEmbed
+                                        embedId={data.youtube_url}
+                                      />
                                     </li>
                                   );
                                 })}
